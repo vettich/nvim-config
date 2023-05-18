@@ -4,7 +4,11 @@
 
 local lsp = require("lsp-zero")
 
-lsp.preset("recommended")
+lsp.preset({
+	name = "recommended",
+	-- manage_nvim_cmp = false,
+	-- cmp_capabilities = false,
+})
 
 lsp.ensure_installed({
 	'tsserver',
@@ -23,6 +27,9 @@ lsp.configure('lua-language-server', {
 	}
 })
 
+---------------------
+-- configure nvim-cmp
+
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
@@ -32,9 +39,6 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<CR>'] = vim.NIL,
 })
-
--- cmp_mappings['<Tab>'] = nil
--- cmp_mappings['<S-Tab>'] = nil
 
 lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
@@ -48,6 +52,9 @@ lsp.setup_nvim_cmp({
 		{ name = 'calc' },                                 -- source for math calculation
 	},
 })
+
+-- cmp_mappings['<Tab>'] = nil
+-- cmp_mappings['<S-Tab>'] = nil
 
 -- lsp.set_preferences({
 --     suggest_lsp_servers = true,
@@ -77,6 +84,11 @@ lsp.setup_nvim_cmp({
 lsp.nvim_workspace()
 
 lsp.setup()
+
+---------------
+-- configure coq
+-- local coq = require('coq')
+-- lsp.setup(coq.lsp_ensure_capabilities())
 
 vim.diagnostic.config({
 	virtual_text = true

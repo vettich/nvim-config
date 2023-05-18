@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
 			})
 		end
 	}
+	use 'j-hui/fidget.nvim' -- lsp progress
 
 	-- навигация по файлам
 	use 'scrooloose/nerdtree'        -- файловый браузер
@@ -78,6 +79,15 @@ return require('packer').startup(function(use)
 			{ 'neovim/nvim-lspconfig' },
 			{ 'williamboman/mason.nvim' },
 			{ 'williamboman/mason-lspconfig.nvim' },
+
+			-- Autocompletion
+			-- {
+			-- 	'ms-jpq/coq_nvim',
+			-- 	branch = 'coq',
+			-- 	requires = {
+			-- 		{ 'ms-jpq/coq.artifacts', branch = 'artifacts' }
+			-- 	}
+			-- },
 
 			-- Autocompletion
 			{ 'hrsh7th/nvim-cmp' },
