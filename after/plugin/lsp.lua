@@ -27,17 +27,28 @@ lsp.configure('lua-language-server', {
 	}
 })
 
----------------------
--- configure nvim-cmp
+lsp.configure('rust_analyzer', {
+	settings = {
+		['rust-analyzer'] = {
+			check = {
+				command = 'clippy'
+			}
+		}
+	}
+})
+
+------------------------
+-- configure nvim-cmp --
+------------------------
 
 local cmp = require('cmp')
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
-		['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-		['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-		['<C-y>'] = cmp.mapping.confirm({ select = true }),
-		['<C-Space>'] = cmp.mapping.complete(),
-		['<CR>'] = vim.NIL,
+	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+	['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+	['<C-y>'] = cmp.mapping.confirm({ select = true }),
+	['<C-Space>'] = cmp.mapping.complete(),
+	['<CR>'] = vim.NIL,
 })
 
 lsp.setup_nvim_cmp({
