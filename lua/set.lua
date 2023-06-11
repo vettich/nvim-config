@@ -1,3 +1,6 @@
+-- Enable local config feature
+vim.opt.exrc = true
+
 vim.opt.number = true         -- показывать номера строк
 vim.opt.relativenumber = true -- относительная нумерация строк
 
@@ -22,7 +25,7 @@ vim.opt.smartcase = true  -- если в поисковом запросе ес�
 
 vim.opt.termguicolors = true
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 4
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
