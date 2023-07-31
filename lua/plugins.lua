@@ -18,6 +18,7 @@ return require('packer').startup(function(use)
 		config = function() require('hlargs').setup() end
 	}
 	use 'martinda/Jenkinsfile-vim-syntax'
+	use 'NoahTheDuke/vim-just'
 
 	-- работа с git
 	use 'tpope/vim-fugitive'
@@ -77,8 +78,10 @@ return require('packer').startup(function(use)
 		requires = {
 			-- LSP Support
 			{ 'neovim/nvim-lspconfig' },
-			{ 'williamboman/mason.nvim' },
+			{ 'williamboman/mason.nvim' }, -- lsp manager
 			{ 'williamboman/mason-lspconfig.nvim' },
+			-- { 'tamago324/nlsp-settings.nvim' }, -- lsp settings
+			-- { 'williamboman/nvim-lsp-installer' },
 
 			-- Autocompletion
 			-- {
