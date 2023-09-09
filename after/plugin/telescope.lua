@@ -13,7 +13,12 @@ require('telescope').setup {
 			"package-lock.json",
 			"yarn.lock",
 		},
-		layout_strategy = "vertical",
+		layout_strategy = "flex",
+		layout_config = {
+			flex = {
+				flip_columns = 120,
+			}
+		},
 		previewer = true,
 		preview = {
 			treesitter = false,
