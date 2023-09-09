@@ -8,6 +8,8 @@ return require('packer').startup(function(use)
 	use 'mhartington/oceanic-next'
 	use 'cocopon/iceberg.vim'
 	use { 'folke/tokyonight.nvim', branch = 'main' }
+	use 'rebelot/kanagawa.nvim'
+	use 'vim-scripts/marklar.vim'
 
 	-- анализатор кода в токены, подсветка синтаксиса
 	use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
@@ -44,7 +46,10 @@ return require('packer').startup(function(use)
 			})
 		end
 	}
-	use 'j-hui/fidget.nvim' -- lsp progress
+	use {
+		'j-hui/fidget.nvim', -- lsp progress
+		tag = 'legacy',
+	}
 
 	-- навигация по файлам
 	use 'scrooloose/nerdtree'        -- файловый браузер
